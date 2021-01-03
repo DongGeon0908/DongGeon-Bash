@@ -5,7 +5,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>⌨ Console ⌨</title>
+<title>💻 Desktop 💻</title>
 </head>
 <body>
 
