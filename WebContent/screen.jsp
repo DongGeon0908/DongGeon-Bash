@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>💻 Desktop 💻</title>
 </head>
-<body>
+<body bgcolor='#F6E9E8'>
 
 </body>
 </html>
