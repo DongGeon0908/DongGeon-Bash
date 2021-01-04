@@ -1,4 +1,4 @@
-# 📋Container 유지기반 기술을 활용한 나만의 NAS SYSTEM📋
+# 📋Container 유지기반 기술을 활용한 NAS SYSTEM📋
 
 <br>
 
