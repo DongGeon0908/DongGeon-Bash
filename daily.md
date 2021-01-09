@@ -47,3 +47,12 @@ Console 화면 html 변경 -> 윈도우 화면 비율 100%
 
 shellCmd, Reader Ipcontact 메서드 이용해서 Ubuntu로 직접 명령 전달
 ```
+
+
+- 2021-01-08
+```
+웹소켓으로 서버 명령 가능
+var webSocket = new WebSocket("ws://192.168.111.128:8080/websocket");
+
+웹소켓 주소 변경 필요		
+```

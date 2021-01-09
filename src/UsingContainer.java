@@ -22,6 +22,10 @@ import javax.websocket.server.ServerEndpoint;
 @ServerEndpoint("/websocket")
 public class UsingContainer extends HttpServlet {
 	// WebSocket으로 브라우저가 접속하면 요청되는 함수
+
+	// WebSocket에서 전송되는 대화
+	String command;
+
 	@OnOpen
 	public void handleOpen() {
 		// 콘솔에 접속 로그를 출력한다.
@@ -31,15 +35,19 @@ public class UsingContainer extends HttpServlet {
 	// 해당 메서드가 외부로 출력되는 메서드이다.
 	// WebSocket으로 메시지가 오면 요청되는 함수
 	@OnMessage
-	public void handleMessage(String message) {
+	public void handleMessage(String message) throws Exception {
 
-		System.out.println("receive from client : " + message);
-		// 에코 메시지를 작성한다.
-		// String replymessage = "응답메세지!! " + message;
-		// 에코 메시지를 콘솔에 출력한다.
-		// System.out.println("send to client : " + replymessage);
-		// 에코 메시지를 브라우저에 보낸다.
-		// return "응답응답return값 : " + replymessage;
+		show(message);
+	}
+
+	public static void show(String console) {
+		System.out.println("Client to Server" + console);
+		try {
+			shellCmd(console);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	// WebSocket과 브라우저가 접속이 끊기면 요청되는 함수
@@ -66,7 +74,6 @@ public class UsingContainer extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public static String shellCmd(String command) throws Exception {
 		Runtime runTime = Runtime.getRuntime();
 		Process process = runTime.exec(command);
@@ -84,8 +91,10 @@ public class UsingContainer extends HttpServlet {
 		} else
 			result = "컴파일 오류";
 
+		
 		return result;
 	}
+
 
 	public static String Reader(String fileName) throws IOException {
 		BufferedReader bufferReader = new BufferedReader(new FileReader(fileName));
