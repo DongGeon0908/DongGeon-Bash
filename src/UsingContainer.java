@@ -35,19 +35,24 @@ public class UsingContainer extends HttpServlet {
 	// 해당 메서드가 외부로 출력되는 메서드이다.
 	// WebSocket으로 메시지가 오면 요청되는 함수
 	@OnMessage
-	public void handleMessage(String message) throws Exception {
+	public String handleMessage(String message) throws Exception {
 
-		show(message);
+		String result = show(message);
+
+		return "Send to Host " + result;
 	}
 
-	public static void show(String console) {
+	public static String show(String console) {
 		System.out.println("Client to Server" + console);
+		String result = "";
 		try {
-			shellCmd(console);
+			result = shellCmd(console);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			result = "Error...";
 		}
+		return result;
 	}
 
 	// WebSocket과 브라우저가 접속이 끊기면 요청되는 함수
@@ -89,12 +94,10 @@ public class UsingContainer extends HttpServlet {
 				result = result + "<br>" + line;
 			}
 		} else
-			result = "컴파일 오류";
+			result = "Order Error...";
 
-		
 		return result;
 	}
-
 
 	public static String Reader(String fileName) throws IOException {
 		BufferedReader bufferReader = new BufferedReader(new FileReader(fileName));

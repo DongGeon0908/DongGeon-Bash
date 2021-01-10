@@ -56,3 +56,8 @@ var webSocket = new WebSocket("ws://192.168.111.128:8080/websocket");
 
 웹소켓 주소 변경 필요		
 ```
+
+- 2021-01-10
+```
+명령에 따른 결과값 출력 server to client
+```
