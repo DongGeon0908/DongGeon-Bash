@@ -60,4 +60,7 @@ var webSocket = new WebSocket("ws://192.168.111.128:8080/websocket");
 - 2021-01-10
 ```
 명령에 따른 결과값 출력 server to client
+-> enter버튼 완료 (websocket이용)
+-> clear버튼 완료 (자바스크립트를 이용해 화면지우기)
+-> main 서버 적용 완료
 ```

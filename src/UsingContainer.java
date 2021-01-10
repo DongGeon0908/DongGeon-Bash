@@ -39,7 +39,7 @@ public class UsingContainer extends HttpServlet {
 
 		String result = show(message);
 
-		return "Send to Host " + result;
+		return result;
 	}
 
 	public static String show(String console) {
@@ -91,7 +91,7 @@ public class UsingContainer extends HttpServlet {
 		String result = "";
 		if (bufferReader.readLine() != null) {
 			while ((line = bufferReader.readLine()) != null) {
-				result = result + "<br>" + line;
+				result = result + "\n" + line;
 			}
 		} else
 			result = "Order Error...";
