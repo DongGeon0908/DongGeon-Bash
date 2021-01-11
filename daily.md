@@ -71,3 +71,43 @@ var webSocket = new WebSocket("ws://192.168.111.128:8080/websocket");
 -> client ip search
 -> 서버 적용 완료
 ```
+
+- 2021-01-12
+```
+docker로 전환하기 위해서 필요한것은 무엇일까?
+버튼에서 value값을 뽑아서 해야될까?
+아니면 docker 전용 스크립트를 만들어야 하는걸까?
+java-> linux 명령 보낼때 cd명령어가 적용되지 않는다.
+해당 문제는 쉘스크립트를 통해 처리해야 하는데 어떻게 진행할까?
+
+
+else if (codeType.equals("python")) {
+					codeTestOld = new File("/usr/local/apache/share/codeTest.py");
+					if (codeTestOld.exists()) {
+						shellCmd("rm -r /usr/local/apache/share/codeTest.py");
+					}
+					FileWriter codew = new FileWriter("/usr/local/apache/share/codeTest.py");
+					codew.write("# -*- coding: utf-8 -*-\n" + code);
+					codew.close();
+
+					FileWriter codeMid_python = new FileWriter("/usr/local/apache/share/codeMid_python.sh");
+					codeMid_python.write("docker restart " + playDocker + "\n");
+					codeMid_python.write(
+							"docker exec " + playDocker + " sh -c 'cd data; python3 codeTest.py 2> error.txt'" + "\n");
+					codeMid_python.write("docker stop " + playDocker + "\n");
+					codeMid_python.close();
+
+					try {
+						String playResult = shellCmd("sh ./share/codeMid_python.sh"); // shellcmd로 바로 실행 불가능 그래서
+																						// sh파일 먼저 돌림
+						playResult = playResult.replace(playDocker, ""); // 알고리즘 코드 실행시 추가적으로 출력되는 문자열
+
+						out.print(playResult);
+
+					} catch (Exception e) {
+						out.print(Reader("/usr/local/apache/share/error.txt"));
+					}
+				}
+```
+
+
