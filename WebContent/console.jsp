@@ -28,8 +28,13 @@
 <meta charset="UTF-8">
 <title>⌨ Console ⌨</title>
 </head>
-<body bgcolor='#F6E9E8'>
+<%
+String address = request.getRemoteAddr();
+%>
 
+
+<body bgcolor='#F6E9E8'>
+	<h2>My Ip Address : <%=address %></h2>
 	<textarea id="messageTextArea" class="input-text" name="history" rows="11" cols="246"
 		style="resize: none;"></textarea>
 	<textarea id="textMessage" name="inputText" rows="5" cols="246"
@@ -50,7 +55,7 @@
 		<button type="submit" style="float: Right;" name="button"
 			id="test_btn" value="changeMain">ChangeMain</button>
 	</div>
- 
+ 	
 
 	<script type="text/javascript">
 		// 「WebSocketEx」는 프로젝트 명	
@@ -65,7 +70,7 @@
 		// WebSocket 서버와 접속이 되면 호출되는 함수	
 		webSocket.onopen = function(message) {
 			// 콘솔 텍스트에 메시지를 출력한다.	
-			messageTextArea.value += "Server connect...\n";
+			messageTextArea.value = messageTextArea.value + "Server connect...\n";
 		};
 
 		// WebSocket 서버와 접속이 끊기면 호출되는 함수	
@@ -86,6 +91,8 @@
 			messageTextArea.value += "Send to Host => " + message.data
 					+ "\n";
 		};
+		
+	
 
 		// Send 버튼을 누르면 호출되는 함수	
 		function sendMessageMain() {
@@ -101,6 +108,8 @@
 
 		}
 
+
+		
 		// Disconnect 버튼을 누르면 호출되는 함수	
 		function disconnect() {
 			// WebSocket 접속 해제	

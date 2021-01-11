@@ -9,8 +9,8 @@
 </head>
 <body bgcolor='#F7D4D6'>
 	<iframe src="screen.jsp"
-		style="display: block; width: 98vw; height: 64vh"></iframe>
+		style="display: block; width: 98vw; height: 58vh"></iframe>
 	<iframe src="console.jsp"
-		style="display: block; width: 98vw; height: 32vh"></iframe>
+		style="display: block; width: 98vw; height: 38vh"></iframe>
 </body>
 </html>

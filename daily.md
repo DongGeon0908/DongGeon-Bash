@@ -64,3 +64,8 @@ var webSocket = new WebSocket("ws://192.168.111.128:8080/websocket");
 -> clear버튼 완료 (자바스크립트를 이용해 화면지우기)
 -> main 서버 적용 완료
 ```
+
+- 2021-01-11
+```
+client ip 주소 받기 성공
+```
