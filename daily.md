@@ -67,5 +67,7 @@ var webSocket = new WebSocket("ws://192.168.111.128:8080/websocket");
 
 - 2021-01-11
 ```
-client ip 주소 받기 성공
+-> client ip 주소 받기 성공
+-> client ip search
+-> 서버 적용 완료
 ```
