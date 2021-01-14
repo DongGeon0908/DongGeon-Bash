@@ -110,4 +110,11 @@ else if (codeType.equals("python")) {
 				}
 ```
 
+- 2021-01-14
+```
+- login form 구현
+- login id = > admin
+- login pw = > admin
+- jsp에 저장된 로그인 id, pw를 객체화 시켜서 쓰기
 
+```

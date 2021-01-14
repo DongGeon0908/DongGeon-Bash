@@ -123,9 +123,7 @@ String address = request.getRemoteAddr();
 			var el = document.getElementsByClassName('input-text');
 
 			for (var i = 0; i < el.length; i++) {
-
 				el[i].value = '';
-
 			}
 
 		}
