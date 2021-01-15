@@ -1,4 +1,4 @@
-# 📋Container 유지기반 기술을 활용한 NAS SYSTEM📋
+# 📋DongGeon's Bash📋
 
 <br>
 
@@ -10,7 +10,10 @@
 <br>
 
 ### 📒Contents
-> Container 유지 기반 기술을 활용해 리눅스 시스템과 연동해서 원격으로 호스팅 컴퓨팅을 이용할 수 있는 WEB Service
+> 우리가 자주 사용하는 git bash..
+> bash를 사용하기 위해서는 내 컴퓨터가 필요하지 않을까?
+
+> 언제 어디서든 쉽게 사용 가능한 나만의 BASH
 
 <br>
 
