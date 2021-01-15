@@ -118,3 +118,12 @@ else if (codeType.equals("python")) {
 - jsp에 저장된 로그인 id, pw를 객체화 시켜서 쓰기
 
 ```
+
+- 2021-01-15
+```
+- 프로젝트 계획 변경
+
+--> 동건이의 bash system
+
+- form 및 데이터 변경
+```

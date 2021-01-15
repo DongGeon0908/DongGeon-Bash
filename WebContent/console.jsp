@@ -44,16 +44,18 @@ String address = request.getRemoteAddr();
 
 		<button type="submit" style="float: left;" name="button"
 			onclick="sendMessageMain()" id="test_btn" value="enter">Enter</button>
+			
 		<button type="submit" style="float: left;"
 			name="button" id="test_btn" onclick="clearInput()" value="refresh">Refresh</button>
+			
 		<button type="submit" style="float: Right;" name="button"
-			id="test_btn" value="change3">Change 3</button>
+			onclick="sendMessageDocker1()" id="test_btn" value="change3">Docker 1</button>
+			
 		<button type="submit" style="float: Right;" name="button"
-			id="test_btn" value="change2">Change 2</button>
+			id="test_btn" value="change2">Docker 2</button>
+			
 		<button type="submit" style="float: Right;" name="button"
-			id="test_btn" value="change1">Change 1</button>
-		<button type="submit" style="float: Right;" name="button"
-			id="test_btn" value="changeMain">ChangeMain</button>
+			id="test_btn" value="change1">Docker 1</button>
 	</div>
  	
 
@@ -99,7 +101,7 @@ String address = request.getRemoteAddr();
 			// 송신 메시지를 작성하는 텍스트 박스 오브젝트를 취득한다.	
 			var message = document.getElementById("textMessage");
 			// 콘솔 텍스트에 메시지를 출력한다.	
-			messageTextArea.value += "Send to Server => " + message.value
+			messageTextArea.value += "Send to Main-Server => " + message.value
 					+ "\n";
 			// WebSocket 서버에 메시지를 송신한다.	
 			webSocket.send(message.value);
@@ -109,6 +111,19 @@ String address = request.getRemoteAddr();
 		}
 
 
+		// Send 버튼을 누르면 호출되는 함수	
+		function sendMessageDocker1() {
+			// 송신 메시지를 작성하는 텍스트 박스 오브젝트를 취득한다.	
+			var message = document.getElementById("textMessage");
+			// 콘솔 텍스트에 메시지를 출력한다.	
+			messageTextArea.value += "Send to Main-Server => " + message.value
+					+ "\n";
+			// WebSocket 서버에 메시지를 송신한다.	
+			webSocket.send(message.value);
+			// 송신 메시지를 작성하는 텍스트 박스를 초기화한다.	
+			message.value = "";
+
+		}
 		
 		// Disconnect 버튼을 누르면 호출되는 함수	
 		function disconnect() {
